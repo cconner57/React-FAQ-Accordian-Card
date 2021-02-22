@@ -27,6 +27,10 @@ const Container = styled.div`
 	transition: height 0.5s ease;
 	cursor: pointer;
 	margin-bottom: 10px;
+	@media (max-width: 375px) {
+		height: ${(props) => (props.isActive ? '120px' : '50px')};
+		margin-bottom: 0;
+	}
 	h4 {
 		display: flex;
 		align-items: center;
@@ -36,6 +40,12 @@ const Container = styled.div`
 		flex: 1 70%;
 		height: 30px;
 		margin-bottom: 10px;
+		@media (max-width: 375px) {
+			height: 50px;
+			min-width: 230px;
+			font-size: .79rem;
+			margin-bottom: 0;
+		}
 	}
 	.down-arrow {
 		flex: 1;
@@ -51,5 +61,8 @@ const Container = styled.div`
 		color: ${text.lightGray};
 		font-size: ${text.size};
 		padding-bottom: 15px;
+		@media (max-width: 375px) {
+			max-width: 250px;
+		}
 	}
 `;

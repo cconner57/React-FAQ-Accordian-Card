@@ -52,12 +52,22 @@ const Container = styled.div`
 	border-radius: 25px;
 	background-color: hsl(0, 0%, 100%);
 	box-shadow: 0 8px 20px 10px rgba(31, 38, 135, 0.37);
+	@media (max-width: 375px) {
+		height: 70vh;
+		width: 85vw;
+		margin-top: 10vh;
+		flex-direction: column;
+	}
 	.images {
 		position: relative;
 		height: 100%;
 		width: 100%;
 		overflow: hidden;
 		z-index: 1;
+		@media (max-width: 375px) {
+			height: 20%;
+			overflow: visible;
+		}
 		.pattern {
 			position: absolute;
 			content: '';
@@ -67,6 +77,12 @@ const Container = styled.div`
 			width: 100vw;
 			background: url(${Pattern}) no-repeat;
 			z-index: 5;
+			@media (max-width: 375px) {
+				top: -150px;
+				left: 50px;
+				width: 100vw;
+				background-size: 60% 35%;
+			}
 		}
 		.woman {
 			position: absolute;
@@ -76,6 +92,12 @@ const Container = styled.div`
 			width: 100vw;
 			background: url(${Women}) no-repeat;
 			z-index: 7;
+			@media (max-width: 375px) {
+				top: -105px;
+				left: 50px;
+				width: 100vw;
+				background-size: 60% 25%;
+			}
 		}
 		.box {
 			position: fixed;
@@ -84,7 +106,13 @@ const Container = styled.div`
 			height: 15%;
 			width: 10%;
 			background: url(${Box}) no-repeat;
-            z-index: 10;
+			z-index: 10;
+			@media (max-width: 375px) {
+				top: 116px;
+				left: 75px;
+				width: 100vw;
+				background-size: 20% 50%;
+			}
 		}
 	}
 	.accordian {
@@ -93,10 +121,16 @@ const Container = styled.div`
 		padding: 40px 40px 0 40px;
 		width: 100%;
 		height: 100%;
-        overflow: hidden;
+		overflow: hidden;
 		h1 {
 			font-weight: ${text.bold};
 			margin-bottom: 20px;
+		}
+		@media (max-width: 375px) {
+			padding: 40px 20px 0;
+			h1 {
+				text-align: center;
+			}
 		}
 	}
 `;
